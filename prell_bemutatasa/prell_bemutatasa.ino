@@ -25,9 +25,9 @@ void loop()
   }
   elozoallapot=allapot;                 //a jelenlegi állapot lesz az új állapot
 
-  if (ido+1000<millis())                //ha 1 sec telt el az előző 
+  if (ido<millis()-1000)                //ha 1 sec telt el az előző 
   {
-    //Serial.println(ciklus_szamlalo);    //kiírjuk ciklus_szamlalo értékét a soros portra
+    Serial.println(ciklus_szamlalo);    //kiírjuk ciklus_szamlalo értékét a soros portra
     ciklus_szamlalo=0;                  //töröljük ciklus_szamlalo értékét, újra kezdjük a számlálást
     ido=millis();                       //tároljuk a millis() értékét, így az if-ben vizsgálhatjuk, hogy eltelt-e 1 másodperc
   }
